@@ -9,9 +9,7 @@
  *  getLengthOfString("down");
  *  //> 4
  */
- function getLengthOfString(str) {
-  return str.length;
-}
+ function getLengthOfString(str) {}
 
 /**
  * convertToNumber()
@@ -24,9 +22,7 @@
  *  convertToNumber("111");
  *  //> 111
  */
-function convertToNumber(val) {
-  return parseInt(val);
-}
+function convertToNumber(val) {}
 
 /**
  * convertToString()
@@ -41,7 +37,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-return val.toString(val);
+  return val.toString()
 }
 
 /**
@@ -56,7 +52,7 @@ return val.toString(val);
  *  //> "HELLO THERE"
  */
 function convertToShoutingText(text) {
-  return toUpperCase(text)
+  return text.toUpperCase()
 }
 
 /**
@@ -71,7 +67,7 @@ function convertToShoutingText(text) {
  *  //> "hello there"
  */
 function convertToWhisperText(text) {
-  return toLowerCase(text)
+  return text.toLowerCase()
 }
 
 /**
@@ -89,9 +85,7 @@ function convertToWhisperText(text) {
  *  checkIfCharacterIsInString("hello there", "a");
  *  //> false
  */
-function checkIfCharacterIsInString(text, character) {
-  return text.includes(character);
-}
+function checkIfCharacterIsInString(text, character) {}
 
 /**
  * isEven()
@@ -107,9 +101,7 @@ function checkIfCharacterIsInString(text, character) {
  *  isEven(11);
  *  //> false
  */
-function isEven(num) {
-  return (num % 2 === 0);
-}
+function isEven(num) {}
 
 /**
  * isOdd()
@@ -125,9 +117,7 @@ function isEven(num) {
  *  isOdd(11);
  *  //> true
  */
-function isOdd(num) {
-  return !(num % 2 === 0);
-}
+function isOdd(num) {}
 
 /**
  * isTruthy()
@@ -143,12 +133,7 @@ function isOdd(num) {
  *  isTruthy(null);
  *  //> false
  */
-function isTruthy(val) {
-  if (val === false){
-    return true;
-  } else { 
-    return false;}
-}
+function isTruthy(val) {}
 
 /**
  * isFalsy()
@@ -164,12 +149,7 @@ function isTruthy(val) {
  *  isFalsy(" ");
  *  //> false
  */
-function isFalsy(val) {
-  if (val === false){
-    return true;
-  } else { 
-    return false;}
-}
+function isFalsy(val) {}
 
 // Do not change the code below.
 module.exports = {

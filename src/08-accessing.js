@@ -21,8 +21,6 @@
   }
 */
 
-const { firstIndexFound } = require("./06-loops");
-
 /**
  * getFirstName()
  * ---------------------
@@ -34,11 +32,7 @@ const { firstIndexFound } = require("./06-loops");
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {
-  
-  
-  return `Rachel`
-}
+function getFirstName(person) {}
 
 /**
  * getLastName()
@@ -51,9 +45,7 @@ function getFirstName(person) {
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {
-  return `Rojas`
-}
+function getLastName(person) {}
 
 /**
  * getAddressStreet()
@@ -66,9 +58,7 @@ function getLastName(person) {
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {
-  return streetAddress;
-}
+function getAddressStreet(person) {}
 
 /**
  * getCountOfPhoneNumbers()
@@ -81,7 +71,9 @@ function getAddressStreet(person) {
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  return person.numbers.length
+}
 
 /**
  * getFirstPhoneNumber()
@@ -97,7 +89,9 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+function getFirstPhoneNumber(person) {
+  return person.numbers[0]
+}
 
 /**
  * getLastPhoneNumber()
@@ -113,7 +107,9 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  return person.numbers[person.numbers.length - 1]
+}
 
 /**
  * getFullName()

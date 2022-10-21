@@ -15,9 +15,7 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {
-  return a === b;
-}
+function isEqual(a, b) {}
 
 /**
  * findLarger()
@@ -32,12 +30,7 @@ function isEqual(a, b) {
  *  //> 19
  */
 function findLarger(a, b) {
-  if(a > b){
-    return a
-  } else {
-    return b
-  }
-  
+  return Math.max(a, b)
 }
 
 /**
@@ -56,13 +49,12 @@ function findLarger(a, b) {
  *  //> "tie"
  */
 function findLargerOrTie(a, b) {
-if (a > b){
-  return a
-} else if (a < b){
-  return b 
-} else {
-  return `tie`
-}
+  if (a > b) {
+    return a
+  } else if (a < b) {
+    return b
+  } else
+  return 'tie'
 }
 
 /**
@@ -84,14 +76,13 @@ if (a > b){
  *  //> "Positive"
  */
 function positiveNegativeOrZero(a) {
-  if (a = 1){
-    return `Positive`
-  }else if (a = -1){
-    return `Negative`
-  } else  {
-    return `Zero`
+  if (a > 0) {
+    return 'Positive'
+  } else if (a === 0) {
+    return 'Zero'
+  } else if (a < 0) {
+    return 'Negative'
   }
-  
 }
 
 /**
@@ -113,17 +104,7 @@ function positiveNegativeOrZero(a) {
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {
-  if (englsih){
-    return `Hello World`
-  } else if (spanish){
-    return `Hola Mundo`
-  } else if(german) {
-    return `Hallo Welt`
-  } else {
-    return `Hello World`
-  }
-}
+function aroundTheWorldGreeting(language) {}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -146,20 +127,7 @@ function aroundTheWorldGreeting(language) {
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {
-  switch (language){
-  case `spanish`:
-    return "Hola Mundo"
-
-    case `German`:
-    return `Hola Welt`
-
-    case `English`:
-      return`Hello World`
-
-
-}
-}
+function aroundTheWorldGreetingWithSwitch(language) {}
 
 /**
  * calculateLetterGrade()
@@ -178,20 +146,7 @@ function aroundTheWorldGreetingWithSwitch(language) {
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade){
-  if (grade >= 90){
-    return `A`
-  } else if (grade >= 80){
-    return `B`
-  } else if (grade >= 70){
-    return `C`
-  }else if (grade >= 60){
-    return `D`
-  }else {
-    return `F`
-  }
-
-}
+function calculateLetterGrade(grade){}
 
 /**
  * animalCounts()
@@ -209,14 +164,7 @@ function calculateLetterGrade(grade){
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {
-  if (numberOfAnimals > 1){
-  return animal + `s`
-  } else {
-    return animal
-  }
-
-}
+function animalCounts(animal, numberOfAnimals) {}
 
 /**
  * evenOrOdd()
@@ -233,9 +181,7 @@ function animalCounts(animal, numberOfAnimals) {
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {
-return (number % 2 == 0);
-}
+function evenOrOdd(a) {}
 
 /**
  * evenOrOddWithTernary()
@@ -251,10 +197,7 @@ return (number % 2 == 0);
  *  evenOrOddWithTernary(8);
  *  //> "Even"
  */
-function evenOrOddWithTernary(a) {
-  return number % 2 == 0
-
-}
+function evenOrOddWithTernary(a) {}
 
 // Do not change any code below this line.
 module.exports = {

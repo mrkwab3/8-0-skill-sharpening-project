@@ -19,7 +19,16 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
-function applyDiscount(priceInCents, age, hasMembership) {}
+function applyDiscount(priceInCents, age, hasMembership) {
+  if (age <= 10 && hasMembership || age >= 65 && hasMembership) {
+    return priceInCents * 0.7
+  } else if (age <= 10 || age >= 65) {
+    return priceInCents * 0.9
+  } else if (hasMembership) {
+    return priceInCents * 0.8
+  } 
+  return priceInCents
+}
 
 /**
  * getCartTotal()
@@ -127,8 +136,26 @@ function compareLocations(address1, address2) {}
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
-
+function gradeAssignments(assignments) {
+  for (const element of assignments) {
+    let percentage = element.score.received / element.score.max * 100
+    if (element.kind === "PASS-FAIL"){
+      if (element.score.received === element.score.max){
+        element.status = `PASSED`
+      } else {
+       element.status = `FAILED`
+      }
+    } else if (element.kind === "PERCENTAGE"){
+      if (percentage >= 80 ){
+        element.status = `PASSED: ${percentage.toFixed(1)}%`
+      } else {
+        element.status = `FAILED: ${percentage.toFixed(1)}%`
+      }
+    } else {element.status = `SCORE: ${element.score.received}/${element.score.max}`
+  } 
+}
+return assignments
+}
 /**
  * createLineOrder()
  * ---------------------
@@ -152,7 +179,21 @@ function gradeAssignments(assignments) {}
     createLineOrder(people);
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
-function createLineOrder(people) {}
+function createLineOrder(people) {
+  const arr = []
+  for(const element of people){
+   if (element.hasMembership === true){
+    arr.push(element.name)
+   }
+  }
+  for(const element of people){
+    if (element.hasMembership === false){
+      arr.push(element.name)
+    }
+  }
+  return arr
+  }
+
 
 module.exports = {
   applyDiscount,
