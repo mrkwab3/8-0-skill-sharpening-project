@@ -1,3 +1,4 @@
+
 /**
  * isEqual()
  * ---------------------
@@ -33,7 +34,9 @@
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  return Math.max(a, b)
+}
 
 /**
  * findLargerOrTie()
@@ -50,7 +53,14 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if (a > b) {
+    return a
+  } else if (a < b) {
+    return b
+  } else
+  return 'tie'
+}
 
 /**
  * positiveNegativeOrZero()
@@ -70,7 +80,15 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if (a > 0) {
+    return 'Positive'
+  } else if (a === 0) {
+    return 'Zero'
+  } else if (a < 0) {
+    return 'Negative'
+  }
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -133,7 +151,7 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade){}
 
 /**
  * animalCounts()
