@@ -22,7 +22,7 @@
  *  applyDiscount(1000, 9, true);
  *  //> 700
  */
- function applyDiscount(priceInCents, age, hasMembership) {
+function applyDiscount(priceInCents, age, hasMembership) {
   if (age <= 10 && hasMembership || age >= 65 && hasMembership) {
     return priceInCents * 0.7
   } else if (age <= 10 || age >= 65) {
@@ -158,8 +158,26 @@ function compareLocations(address1, address2) {
     //>   },
     //> ];
  */
-function gradeAssignments(assignments) {}
-
+function gradeAssignments(assignments) {
+  for (const element of assignments) {
+    let percentage = element.score.received / element.score.max * 100
+    if (element.kind === "PASS-FAIL"){
+      if (element.score.received === element.score.max){
+        element.status = `PASSED`
+      } else {
+       element.status = `FAILED`
+      }
+    } else if (element.kind === "PERCENTAGE"){
+      if (percentage >= 80 ){
+        element.status = `PASSED: ${percentage.toFixed(1)}%`
+      } else {
+        element.status = `FAILED: ${percentage.toFixed(1)}%`
+      }
+    } else {element.status = `SCORE: ${element.score.received}/${element.score.max}`
+  } 
+}
+return assignments
+}
 /**
  * createLineOrder()
  * ---------------------
@@ -185,30 +203,20 @@ function gradeAssignments(assignments) {}
     //> [ "Ray Anderson", "America Marsh", "Wade Carson", "Patience Patel" ]
  */
 function createLineOrder(people) {
-  arr = []
-  // for (i = people.length - 1; i >= 0; i--) {
-  //   if (people[i].hasMembership === true) {
-  //     arr.unshift(people[i].name)
-  //   }
-  // }
-  // for (i = 0; i < people.length; i++) {
-  //   if (people[i].hasMembership === false) {
-  //     arr.push(people[i].name)
-  //   }
-  // }
-  for (element of people) {
-    if (element.hasMembership === true) {
-      arr.push(element.name)
-    }
+  const arr = []
+  for(const element of people){
+   if (element.hasMembership === true){
+    arr.push(element.name)
+   }
   }
-
-  for (element of people) {
-    if (element.hasMembership === false) {
+  for(const element of people){
+    if (element.hasMembership === false){
       arr.push(element.name)
     }
   }
   return arr
-}
+  }
+
 
 module.exports = {
   applyDiscount,
